@@ -1,0 +1,59 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --color-forest-50: #eef6f0;
+  --color-forest-100: #d6eadb;
+  --color-forest-200: #acd4b8;
+  --color-forest-500: #2e7a4f;
+  --color-forest-600: #256843;
+  --color-forest-700: #1f5c3a;
+  --color-forest-800: #17472d;
+  --color-forest-900: #0f3020;
+  --color-lime-300: #cfee8a;
+  --color-lime-400: #b7e34a;
+  --color-ivory: #fbf7ec;
+  --color-ink: #17301f;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+body {
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Keyboard focus that is always visible */
+:focus-visible {
+  outline: 3px solid var(--color-lime-400);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Print: route sheet only (no navigation, no buttons) */
+@media print {
+  body {
+    background: #fff;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-break {
+    break-inside: avoid;
+  }
+  main {
+    padding: 0 !important;
+  }
+}
+.print-only {
+  display: none;
+}

@@ -1,0 +1,12 @@
+// DailyDairy partner dashboard: static site served by Cloudflare Workers (static assets).
+// Deploy: npm run deploy  (needs `npx wrangler login` once)
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dailydairy-dashboard",
+  "compatibility_date": "2025-09-15",
+  "assets": {
+    "directory": "./dist",
+    // Single-page app: unknown paths serve index.html so links like /day?date=... work.
+    "not_found_handling": "single-page-application"
+  }
+}
